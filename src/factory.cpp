@@ -1,5 +1,4 @@
 #include "../header/factory.h"
-#include <string>
 
 Base* Factory::parse(char** input, int length)
 {

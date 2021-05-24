@@ -2,7 +2,7 @@
 #define __FACTORY_TEST_H__
 
 #include "gtest/gtest.h"
-#include "../header/factory.h"
+#include "../src/factory.cpp"
 
 TEST(FactoryTest, EasyAdd) {
    Factory test;
