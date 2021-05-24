@@ -11,6 +11,10 @@ public:
       this->op1 = op1;
       this->op2 = op2;
    }
+   ~Sub() {
+      delete op1;
+      delete op2;
+   }
    virtual double evaluate() {
       return (op1->evaluate() - op2->evaluate());
    }
