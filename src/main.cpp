@@ -8,10 +8,10 @@
 #include "../header/pow.h"
 #include "../header/factory.h"
 
-int main(int argc, char** argv) {
+int main(int argv, char** argc) {
    int i = 1;
-   while (i < argc) {
-      std::cout << argv[i];
+   while (i < argv) {
+      std::cout << argc[i];
       i++;
    }
    std::cout << std::endl;
