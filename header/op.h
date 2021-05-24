@@ -11,6 +11,7 @@ public:
    Op(double value) : Base() {
       this->value = value;
    }
+   ~Op() {}
    virtual double evaluate() {
       return value;
    }

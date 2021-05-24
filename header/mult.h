@@ -13,6 +13,10 @@ public:
       this->op_1 = op_1;
       this->op_2 = op_2;
    }
+   ~Mult() {
+      delete op_1;
+      delete op_2;
+   }
    virtual double evaluate()
    {
       return op_1->evaluate() * op_2->evaluate();
