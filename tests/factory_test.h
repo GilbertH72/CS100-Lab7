@@ -46,11 +46,11 @@ TEST(FactoryTest, EasyPow) {
    EXPECT_DOUBLE_EQ(operation->evaluate(), 125);
 }
 
-TEST(FactoryTest, EasySub) {
+TEST(FactoryTest, NegativeSub) {
    Factory test;
-   char* args[] = { "2", "-", "5" };
+   char* args[] = { "-6", "-", "3" };
    Base* operation = test.parse(args, 3);
-   EXPECT_DOUBLE_EQ(operation->evaluate(), -3);
+   EXPECT_DOUBLE_EQ(operation->evaluate(), -9);
 }
 
 TEST(FactoryTest, EasyDiv) {
@@ -80,5 +80,13 @@ TEST(FactoryTest, AddDivPow) {
    Base* operation = test.parse(args, 7);
    EXPECT_DOUBLE_EQ(operation->evaluate(), 8);
 }
+
+TEST(FactoryTest, DecimalAdd) {
+   Factory test;
+   char* args[] = { "12.5", "+", "6.5" };
+   Base* operation = test.parse(args, 19);
+   EXPECT_DOUBLE_EQ(operation->evaluate(), 18);
+}
+
 
 #endif // __FACTORY_TEST_H__
