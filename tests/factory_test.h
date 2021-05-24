@@ -46,4 +46,47 @@ TEST(FactoryTest, EasyPow) {
    EXPECT_DOUBLE_EQ(operation->evaluate(), 125);
 }
 
+TEST(FactoryTest, NegativeSub) {
+   Factory test;
+   char* args[] = { "-6", "-", "3" };
+   Base* operation = test.parse(args, 3);
+   EXPECT_DOUBLE_EQ(operation->evaluate(), -9);
+}
+
+TEST(FactoryTest, EasyDiv) {
+   Factory test;
+   char* args[] = { "16", "/", "4" };
+   Base* operation = test.parse(args, 3);
+   EXPECT_DOUBLE_EQ(operation->evaluate(), 4);
+}
+
+TEST(FactoryTest, MultWhileDiv) {
+   Factory test;
+   char* args[] = { "8", "*", "6", "/", "12" };
+   Base* operation = test.parse(args, 5);
+   EXPECT_DOUBLE_EQ(operation->evaluate(), 4);
+}
+
+TEST(FactoryTest, DivWhileAdd) {
+   Factory test;
+   char* args[] = { "18", "/", "3", "+", "7" };
+   Base* operation = test.parse(args, 5);
+   EXPECT_DOUBLE_EQ(operation->evaluate(), 13);
+}
+
+TEST(FactoryTest, AddDivPow) {
+   Factory test;
+   char* args[] = { "1", "+", "9", "/", "5", "**", "3" };
+   Base* operation = test.parse(args, 7);
+   EXPECT_DOUBLE_EQ(operation->evaluate(), 8);
+}
+
+TEST(FactoryTest, DecimalAdd) {
+   Factory test;
+   char* args[] = { "12.5", "+", "6.5" };
+   Base* operation = test.parse(args, 19);
+   EXPECT_DOUBLE_EQ(operation->evaluate(), 18);
+}
+
+
 #endif // __FACTORY_TEST_H__
