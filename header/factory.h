@@ -17,7 +17,7 @@ class Factory
 {
 public:
    Factory() {}
-   ~Factory() {}
+   virtual ~Factory() {}
    Base* parse(char** input, int length);
 };
 

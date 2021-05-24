@@ -7,6 +7,7 @@
 #include "../header/sub.h"
 #include "../header/pow.h"
 #include "../header/factory.h"
+#include "factory.cpp"
 
 int main(int argv, char** argc) {
    int i = 1;
