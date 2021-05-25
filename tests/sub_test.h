@@ -11,6 +11,7 @@ TEST(SubTest, SubEvaluateNonZero) {
    Op* op2 = new Op(2);
    Sub* test = new Sub(op1, op2);
    EXPECT_EQ(test->evaluate(), 3);
+   delete test;
 }
 
 TEST(SubTest, SubStringifyNonZero) {
@@ -18,6 +19,7 @@ TEST(SubTest, SubStringifyNonZero) {
    Op* op2 = new Op(2);
    Sub* test = new Sub(op1, op2);
    EXPECT_EQ(test->stringify(), "5 - 2");
+   delete test;
 }
 
 TEST(SubTest, SubEvaluateZero) {
@@ -25,6 +27,7 @@ TEST(SubTest, SubEvaluateZero) {
    Op* op2 = new Op(4);
    Sub* test = new Sub(op1, op2);
    EXPECT_EQ(test->evaluate(), 0);
+   delete test;
 }
 
 TEST(SubTest, SubStringifyZero) {
@@ -32,6 +35,7 @@ TEST(SubTest, SubStringifyZero) {
    Op* op2 = new Op(4);
    Sub* test = new Sub(op1, op2);
    EXPECT_EQ(test->stringify(), "4 - 4");
+   delete test;
 }
 
 TEST(SubTest, SubEvaluateNegativeNonZero) {
@@ -39,6 +43,7 @@ TEST(SubTest, SubEvaluateNegativeNonZero) {
    Op* op2 = new Op(9);
    Sub* test = new Sub(op1, op2);
    EXPECT_EQ(test->evaluate(), -2);
+   delete test;
 }
 
 TEST(SubTest, SubStringifyNegativeNonZero) {
@@ -46,6 +51,7 @@ TEST(SubTest, SubStringifyNegativeNonZero) {
    Op* op2 = new Op(9);
    Sub* test = new Sub(op1, op2);
    EXPECT_EQ(test->stringify(), "7 - 9");
+   delete test;
 }
 
 TEST(SubTest, SubEvaluateAddNonZero) {
@@ -55,6 +61,7 @@ TEST(SubTest, SubEvaluateAddNonZero) {
    Op* op3 = new Op(10);
    Sub* test = new Sub(add1, op3);
    EXPECT_EQ(test->evaluate(), 4);
+   delete test;
 }
 
 TEST(SubTest, SubStringifyAddNonZero) {
@@ -64,6 +71,7 @@ TEST(SubTest, SubStringifyAddNonZero) {
    Op* op3 = new Op(10);
    Sub* test = new Sub(add1, op3);
    EXPECT_EQ(test->stringify(), "6 + 8 - 10");
+   delete test;
 }
 
 

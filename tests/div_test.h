@@ -10,6 +10,7 @@ TEST(DivTest, DivEvaluateNonZero) {
    Op* op2 = new Op(3);
    Div* test = new Div(op1, op2);
    EXPECT_EQ(test->evaluate(), 2);
+   delete test;
 }
 
 TEST(DivTest, DivStringifyNonZero) {
@@ -17,6 +18,7 @@ TEST(DivTest, DivStringifyNonZero) {
    Op* op2 = new Op(3);
    Div* test = new Div(op1, op2);
    EXPECT_EQ(test->stringify(), "6 / 3");
+   delete test;
 }
 
 TEST(DivTest, DivEvaluateZero) {
@@ -24,6 +26,7 @@ TEST(DivTest, DivEvaluateZero) {
    Op* op2 = new Op(1);
    Div* test = new Div(op1, op2);
    EXPECT_EQ(test->evaluate(), 0);
+   delete test;
 }
 
 TEST(DivTest, DivStringifyZero) {
@@ -31,6 +34,7 @@ TEST(DivTest, DivStringifyZero) {
    Op* op2 = new Op(1);
    Div* test = new Div(op1, op2);
    EXPECT_EQ(test->stringify(), "0 / 1");
+   delete test;
 }
 
 TEST(DivTest, DivEvaluateNegativeNonZero) {
@@ -38,6 +42,7 @@ TEST(DivTest, DivEvaluateNegativeNonZero) {
    Op* op2 = new Op(2);
    Div* test = new Div(op1, op2);
    EXPECT_EQ(test->evaluate(), -4);
+   delete test;
 }
 
 TEST(DivTest, DivStringifyNegativeNonZero) {
@@ -45,6 +50,7 @@ TEST(DivTest, DivStringifyNegativeNonZero) {
    Op* op2 = new Op(2);
    Div* test = new Div(op1, op2);
    EXPECT_EQ(test->stringify(), "-8 / 2");
+   delete test;
 }
 
 #endif // __DIV_TEST_H__

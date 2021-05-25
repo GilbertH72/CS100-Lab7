@@ -10,6 +10,7 @@ TEST(PowTest, PowEvaluatePositiveInts) {
    Op* op2 = new Op(4);
    Pow* test = new Pow(op1, op2);
    EXPECT_EQ(test->evaluate(), 625);
+   delete test;
 }
 
 TEST(PowTest, PowStringifyPositiveInts) {
@@ -17,6 +18,7 @@ TEST(PowTest, PowStringifyPositiveInts) {
    Op* op2 = new Op(10);
    Pow* test = new Pow(op1, op2);
    EXPECT_EQ(test->stringify(), "4 ** 10");
+   delete test;
 }
 
 TEST(PowTest, PowEvaluateNegativeInts) {
@@ -24,6 +26,7 @@ TEST(PowTest, PowEvaluateNegativeInts) {
    Op* op2 = new Op(-1);
    Pow* test = new Pow(op1, op2);
    EXPECT_EQ(test->evaluate(), 0.50);
+   delete test;
 }
 
 TEST(PowTest, PowStringifyNegativeInts) {
@@ -31,6 +34,7 @@ TEST(PowTest, PowStringifyNegativeInts) {
    Op* op2 = new Op(-1);
    Pow* test = new Pow(op1, op2);
    EXPECT_EQ(test->stringify(), "4 ** -1");
+   delete test;
 }
 
 TEST(PowTest, PowEvaluateToTheZero) {
@@ -38,6 +42,7 @@ TEST(PowTest, PowEvaluateToTheZero) {
    Op* op2 = new Op(0);
    Pow* test = new Pow(op1, op2);
    EXPECT_EQ(test->evaluate(), 1);
+   delete test;
 }
 
 TEST(PowTest, PowStringifyToTheZero) {
@@ -45,6 +50,7 @@ TEST(PowTest, PowStringifyToTheZero) {
    Op* op2 = new Op(0);
    Pow* test = new Pow(op1, op2);
    EXPECT_EQ(test->stringify(), "6 ** 0");
+   delete test;
 }
 
 #endif //__POW_TEST_H__

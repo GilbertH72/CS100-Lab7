@@ -11,6 +11,7 @@ TEST(AddTest, AddEvaluatePositiveInts) {
    Op* op2 = new Op(7);
    Add* test = new Add(op1, op2);
    EXPECT_EQ(test->evaluate(), 13);
+   delete test;
 }
 
 TEST(AddTest, AddStringifyPositiveInts) {
@@ -18,6 +19,7 @@ TEST(AddTest, AddStringifyPositiveInts) {
    Op* op2 = new Op(10);
    Add* test = new Add(op1, op2);
    EXPECT_EQ(test->stringify(), "4 + 10");
+   delete test;
 }
 
 TEST(AddTest, AddEvaluateNegativeInts) {
@@ -25,6 +27,7 @@ TEST(AddTest, AddEvaluateNegativeInts) {
    Op* op2 = new Op(-7);
    Add* test = new Add(op1, op2);
    EXPECT_EQ(test->evaluate(), -13);
+   delete test;
 }
 
 TEST(AddTest, AddStringifyNegativeInts) {
@@ -32,6 +35,7 @@ TEST(AddTest, AddStringifyNegativeInts) {
    Op* op2 = new Op(-10);
    Add* test = new Add(op1, op2);
    EXPECT_EQ(test->stringify(), "-4 + -10");
+   delete test;
 }
 
 TEST(AddTest, AddEvaluatePositiveDoubles) {
@@ -39,6 +43,7 @@ TEST(AddTest, AddEvaluatePositiveDoubles) {
    Op* op2 = new Op(7.8);
    Add* test = new Add(op1, op2);
    EXPECT_EQ(test->evaluate(), 14.1);
+   delete test;
 }
 
 TEST(AddTest, AddStringifyPositiveDoubles) {
@@ -46,6 +51,7 @@ TEST(AddTest, AddStringifyPositiveDoubles) {
    Op* op2 = new Op(10.2);
    Add* test = new Add(op1, op2);
    EXPECT_EQ(test->stringify(), "4.5 + 10.2");
+   delete test;
 }
 
 TEST(AddTest, AddEvaluateNegativeDoubles) {
@@ -53,6 +59,7 @@ TEST(AddTest, AddEvaluateNegativeDoubles) {
    Op* op2 = new Op(-7.8);
    Add* test = new Add(op1, op2);
    EXPECT_EQ(test->evaluate(), -14.1);
+   delete test;
 }
 
 TEST(AddTest, AddStringifyNegativeDoubles) {
@@ -60,6 +67,7 @@ TEST(AddTest, AddStringifyNegativeDoubles) {
    Op* op2 = new Op(-10.2);
    Add* test = new Add(op1, op2);
    EXPECT_EQ(test->stringify(), "-4.5 + -10.2");
+   delete test;
 }
 
 TEST(AddTest, AddEvaluateThroughMult) {
@@ -69,6 +77,7 @@ TEST(AddTest, AddEvaluateThroughMult) {
    Op* op3 = new Op(30);
    Add* test = new Add(mult1, op3);
    EXPECT_EQ(test->evaluate(), 44);
+   delete test;
 }
 
 TEST(AddTest, AddStringThroughMult) {
@@ -78,18 +87,23 @@ TEST(AddTest, AddStringThroughMult) {
    Op* op3 = new Op(30);
    Add* test = new Add(mult1, op3);
    EXPECT_EQ(test->stringify(), "2 * 7 + 30");
+   delete test;
 }
 
 TEST(AddTest, AddEvaluateZeros) {
-   Op* zero = new Op(0);
-   Add* test = new Add(zero, zero);
+   Op* zero_1 = new Op(0);
+   Op* zero_2 = new Op(0);
+   Add* test = new Add(zero_1, zero_2);
    EXPECT_EQ(test->evaluate(), 0);
+   delete test;
 }
 
 TEST(AddTest, AddStringifyZeros) {
-   Op* zero = new Op(0);
-   Add* test = new Add(zero, zero);
+   Op* zero_1 = new Op(0);
+   Op* zero_2 = new Op(0);
+   Add* test = new Add(zero_1, zero_2);
    EXPECT_EQ(test->stringify(), "0 + 0");
+   delete test;
 }
 
 #endif //__ADD_TEST_H__
