@@ -112,4 +112,11 @@ TEST(FactoryTest, DecimalAdd) {
    delete operation;
 }
 
+TEST(FactoryInvalidArg, NullPtr2 ) {
+   Factory test;
+   char* argv[] = { "./calculator", "5", "+", "8","$", "3" };
+   Base* op = test.parse(argv, 6);
+   EXPECT_TRUE(!op);
+}
+
 #endif // __FACTORY_TEST_H__

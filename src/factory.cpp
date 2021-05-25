@@ -33,6 +33,7 @@ Base* Factory::parse(char** input, int length)
       }
       else {
          std::cout << "ERROR" << std::endl;
+         if (l_Operation) delete l_Operation;
          return nullptr;
       }
       i++;
