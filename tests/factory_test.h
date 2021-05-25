@@ -85,7 +85,7 @@ TEST(FactoryTest, DecimalAdd) {
    Factory test;
    char* args[] = { "12.5", "+", "6.5" };
    Base* operation = test.parse(args, 3);
-   EXPECT_DOUBLE_EQ(operation->evaluate(), 18);
+   EXPECT_DOUBLE_EQ(operation->evaluate(), 19);
 }
 
 
